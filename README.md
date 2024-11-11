@@ -5,6 +5,4 @@
 ### Domingo Saavedra
 
 ## Participantes
-- Benjamin Montero
-- Franco Martinez
-- Agostina Ramos
+
