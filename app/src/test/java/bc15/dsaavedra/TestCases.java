@@ -16,7 +16,6 @@ public class TestCases {
     public void CP001_CreacionCta_Spotify() throws InterruptedException {
         driver.get("https://open.spotify.com/intl-es");
         Thread.sleep(3000);
-
     }
 
     @Test
