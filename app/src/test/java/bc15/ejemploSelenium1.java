@@ -9,7 +9,6 @@ public class ejemploSelenium1 {
     @Test
     public void ejemplo1() throws InterruptedException {
         String rutaDriver = System.getProperty("user.dir") +"\\src\\test\\resources\\drivers\\chromedriver.exe";
-
         //enlazar el webdriver a traves de property
         System.setProperty("webdriver.chrome.driver",rutaDriver);
         //testing
@@ -24,7 +23,6 @@ public class ejemploSelenium1 {
         System.out.println("La url actual es: "+ driver.getCurrentUrl());
 
         System.out.println("DOM: "+driver.getPageSource());
-
 
         driver.navigate().to("https://www.tsoftlatam.com");
 
@@ -51,5 +49,7 @@ public class ejemploSelenium1 {
         Thread.sleep(3000);
 
         driver.close();
+
+
     }
 }
