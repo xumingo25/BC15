@@ -12,7 +12,7 @@ public class ejemploSelenium1 {
 
         //enlazar el webdriver a traves de property
         System.setProperty("webdriver.chrome.driver",rutaDriver);
-
+        //testing
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://www.google.com");
