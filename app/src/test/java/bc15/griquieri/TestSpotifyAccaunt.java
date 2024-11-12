@@ -60,7 +60,7 @@ public class TestSpotifyAccaunt {
 
         //complete password
         driver.findElement(By.xpath("//input[@id='new-password']")).sendKeys("Contraseña123.");
-
+        Thread.sleep(2000);
         EsperayClick(By.xpath("//button[@data-testid='submit']"));
 
 
