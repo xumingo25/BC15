@@ -1,5 +1,6 @@
 package bc15.BenjaMontero;
 
+import bc15.BenjaMontero.utils.Email;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
@@ -55,7 +57,7 @@ public class SpotifyAccountTC {
         this.emailGeneraterForSpoty = email;
 
         WebElement inputEmail = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"username\"]")));
-        inputEmail.sendKeys(email);
+        inputEmail.sendKeys(email+"@gmail.com");
 
         WebElement inputPsw = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"new-password\"]")));
         inputPsw.sendKeys(pswSpoty);
@@ -69,11 +71,11 @@ public class SpotifyAccountTC {
         WebElement inputDay = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//INPUT[@id='day']")));
         inputDay.sendKeys("31");
 
-        WebElement selectMonth = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//SELECT[@id='month']")));
-        selectMonth.click();
+        Select select = new Select(wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//SELECT[@id='month']"))));
+        select.selectByValue("Enero");
 
-        WebElement optionJanuary = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"month\"]/option[2]")));
-        optionJanuary.click();
+//        WebElement optionJanuary = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"month\"]/option[2]")));
+//        optionJanuary.click();
 
         WebElement inputYear = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//INPUT[@id='year']")));
         inputYear.sendKeys("2002");
