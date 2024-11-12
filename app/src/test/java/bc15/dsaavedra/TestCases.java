@@ -10,10 +10,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestCases {
-    private WebDriver driver;
+    private WebDriver driver;  //inicializar el webdriver
 
-    @Test
-    public void CP001_CreacionCta_Spotify() throws InterruptedException {
+    @Test //crear test
+    public void CP001_CreacionCta_Spotify() throws InterruptedException { // Thread.sleep
         driver.get("https://open.spotify.com/intl-es");
         Thread.sleep(3000);
     }
