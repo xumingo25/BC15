@@ -112,7 +112,7 @@ public class TestCases {
     public void CP002_CreacionCta_SpotifyNOOK_MailVacio() throws InterruptedException {
         driver.get("https://open.spotify.com/intl-es");
         Thread.sleep(3000);
-        By byBtnRegistrarse = By.xpath("//button[contains(text(),'Regis')]");
+        By byBtnRegistrarse = By.xpath("//button[contains(text(),'Reg')]");
 
         WebElement btnRegistrarse = driver.findElement(byBtnRegistrarse);
 
@@ -120,7 +120,7 @@ public class TestCases {
 
         Thread.sleep(3000);
 
-          WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
+        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
 
         if(btnCerrarPopUp.isDisplayed()){
             btnCerrarPopUp.click();
