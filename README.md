@@ -6,4 +6,12 @@
 
 ## Participantes
 
+
+
+
+- Benjamin Montero
+- Franco Martinez
+- Agostina Ramos
+- Gabriel Riquieri
+- Diaz Rodrigo
 - Matias Mercado
