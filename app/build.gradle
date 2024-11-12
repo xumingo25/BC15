@@ -21,6 +21,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    testImplementation 'org.apache.commons:commons-lang3:3.12.0' //agregada por Benja - genera un string aleatorio
 
 
     // This dependency is used by the application.
