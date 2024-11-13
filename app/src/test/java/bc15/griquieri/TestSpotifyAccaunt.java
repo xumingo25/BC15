@@ -1,7 +1,10 @@
 package bc15.griquieri;
 
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -62,6 +65,35 @@ public class TestSpotifyAccaunt {
         driver.findElement(By.xpath("//input[@id='new-password']")).sendKeys("Contraseña123.");
         Thread.sleep(2000);
         EsperayClick(By.xpath("//button[@data-testid='submit']"));
+
+        //Charging data to Personal Info
+        driver.findElement(By.name("displayName")).sendKeys("User BC 00001");
+
+        driver.findElement(By.xpath("//input[@placeholder='dd']")).sendKeys("06");
+
+        Select ddlMes =new Select(driver.findElement(By.id("month")));
+        ddlMes.selectByVisibleText("Septiembre");
+
+        driver.findElement(By.xpath("//input[@placeholder='aaaa']")).sendKeys("1994");
+
+        List<WebElement> gender = driver.findElements(By.xpath("//label[contains(@for,'gender')]"));
+
+        gender.get(0).click();
+        Thread.sleep(1000);
+        gender.get(1).click();
+        Thread.sleep(1000);
+        gender.get(2).click();
+        Thread.sleep(1000);
+        gender.get(3).click();
+        Thread.sleep(1000);
+        gender.get(4).click();
+        Thread.sleep(1000);
+        gender.get(0).click();
+        Thread.sleep(1000);
+
+
+        EsperayClick(By.xpath("//button[@data-testid='submit']"));
+
 
 
 
