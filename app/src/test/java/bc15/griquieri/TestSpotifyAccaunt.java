@@ -1,7 +1,11 @@
 package bc15.griquieri;
 
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,7 +44,7 @@ public class TestSpotifyAccaunt {
         btnRegister.click();
 
         //looking for the "username" Imput
-        driver.findElement(By.xpath("//input[@id='username']")).sendKeys("userbc150002@gmail.com");
+        driver.findElement(By.xpath("//input[@id='username']")).sendKeys("userbc150003@gmail.com");
 
         //Close PopUp
         /*WebElement btnClosePopup = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
@@ -63,6 +67,57 @@ public class TestSpotifyAccaunt {
         Thread.sleep(2000);
         EsperayClick(By.xpath("//button[@data-testid='submit']"));
 
+        //Charging data to Personal Info
+        driver.findElement(By.name("displayName")).sendKeys("UserBC150003");
+
+        driver.findElement(By.xpath("//input[@placeholder='dd']")).sendKeys("06");
+
+        Select ddlMes =new Select(driver.findElement(By.id("month")));
+        ddlMes.selectByVisibleText("Septiembre");
+
+        driver.findElement(By.xpath("//input[@placeholder='aaaa']")).sendKeys("1994");
+
+        List<WebElement> gender = driver.findElements(By.xpath("//label[contains(@for,'gender')]"));
+
+        gender.get(0).click();
+        Thread.sleep(1000);
+        gender.get(1).click();
+        Thread.sleep(1000);
+        gender.get(2).click();
+        Thread.sleep(1000);
+        gender.get(3).click();
+        Thread.sleep(1000);
+        gender.get(4).click();
+        Thread.sleep(1000);
+        gender.get(0).click();
+        Thread.sleep(1000);
+
+
+        EsperayClick(By.xpath("//button[@data-testid='submit']"));
+
+        //Accepting terms
+        List<WebElement> checks = driver.findElements(By.xpath("//label[contains(@for,'checkbox-')]"));
+
+        checks.get(0).click();
+        Thread.sleep(1000);
+        checks.get(1).click();
+        Thread.sleep(1000);
+        checks.get(0).click();
+        Thread.sleep(1000);
+        checks.get(1).click();
+        checks.get(0).click();
+        Thread.sleep(1000);
+        checks.get(1).click();
+        Thread.sleep(1000);
+
+        EsperayClick(By.xpath("//button[@data-testid='submit']"));
+
+        Thread.sleep(5000);
+
+        String expectedResult = "UserBC150003";
+        String actualResult = driver.findElement(By.xpath("//button[@data-testid='user-widget-link']")).getAttribute("aria-label");
+
+        Assertions.assertEquals(expectedResult,actualResult);
 
 
     }
@@ -85,7 +140,7 @@ public class TestSpotifyAccaunt {
     @AfterEach
 
     public void posCondiciones(){
-        //driver.close();
+        driver.close();
     }
 
 }
