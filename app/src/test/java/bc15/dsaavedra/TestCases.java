@@ -29,7 +29,7 @@ public class TestCases {
 
         Thread.sleep(1000);
 
-        driver.findElement(By.id("username")).sendKeys("userbc1500101@gmail.com");
+        driver.findElement(By.name("username")).sendKeys("userbc1500101@gmail.com");
 
         Thread.sleep(1000);
 
