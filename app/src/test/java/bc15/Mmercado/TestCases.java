@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
+
 public class TestCases {
  private WebDriver driver;
 
@@ -27,7 +29,7 @@ public class TestCases {
 
         Thread.sleep(3000);
 
-        //Cerrar Pop-up
+        //Cerrar Pop-up "la ventana emergente"
         WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
 
         if(btnCerrarPopUp.isDisplayed()){
@@ -49,18 +51,15 @@ public class TestCases {
         //Complete password
         driver.findElement(By.xpath
                 ("//input[@id='new-password']")).sendKeys("Contraseña325.");
-
         Thread.sleep(1000);
 
         driver.findElement(By.xpath("//button[@data-testid='submit']")).click();
 
-        // Ingresar Nombre de usuario
-
+        // Encuentra e Ingresar un Nombre de usuario
         driver.findElement(By.xpath
                 ("//input[@id='displayName']")).sendKeys("usuario325xD");
 
-        // Ingresa el Numero del Dia de Nacimiento o REF de la cuenta
-
+        // Encuentra e Ingresa el Numero del Dia de Nacimiento o REF de la cuenta
         driver.findElement(By.xpath("//input[@placeholder='dd']")).sendKeys("26");
         Thread.sleep(1000);
 
@@ -69,10 +68,42 @@ public class TestCases {
         ddlMes.selectByVisibleText("Enero");
         Thread.sleep(1000);
 
+        //Encuentra e Ingresa el año de Nacimiento en la casilla
         driver.findElement(By.xpath("//input[@id='year']")).sendKeys("1995");
         Thread.sleep(1000);
 
+        // Busca dentro de un Label con un for el genero
+        List<WebElement> generos = driver.findElements(By.xpath("//label[contains(@for,'gender')]"));
 
+        //Aqui recorre todos los botones para seleccionar el tipo de genero adecuado
+        generos.get(0).click();
+        Thread.sleep(1000);
+        generos.get(1).click();
+        Thread.sleep(1000);
+        generos.get(2).click();
+        Thread.sleep(1000);
+        generos.get(3).click();
+        Thread.sleep(1000);
+        generos.get(4).click();
+        Thread.sleep(1000);
+        generos.get(0).click();
+        Thread.sleep(1000);
+
+        // Aqui Selecciona el genero que definimos
+        driver.findElement(By.xpath("//button[@data-testid='submit']")).click();
+        Thread.sleep(1000);
+
+        //Encuentra y Selecciona los terminos y condiciones de la pagina
+        List<WebElement> checklist = driver.findElements(By.xpath("//label[contains(@for,'checkbox-')]"));
+        checklist.get(0).click(); // La posicion cera 0 ya que es el primer casillero
+        //Thread.sleep(1000);
+        checklist.get(1).click(); // La posicion cera 1 ya que es el segundo casillero
+        Thread.sleep(1000);
+
+
+        // Hace clic en boton registrar
+        driver.findElement(By.xpath("//button[@data-testid='submit']")).click();
+        Thread.sleep(1000);
 
 
         // Verificar que se ha redirigido a la página de bienvenida o que se muestra un mensaje de éxito
