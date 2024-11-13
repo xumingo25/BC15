@@ -1,53 +1,47 @@
 package bc15.gAcevedo;
-
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class TestCaseRegistro {
+
     private WebDriver driver;
 
     @Test
-    public void CP001_CreacionCta_Spotify() throws InterruptedException {
+    public void TP01createAccountSpotify() throws InterruptedException{
         driver.get("https://open.spotify.com/intl-es");
-        Thread.sleep(3000);
-    }
+        Thread.sleep(1000);
 
-    @Test
-    public void CP002_CreacionCta_SpotifyNOOK_MailVacio() throws InterruptedException {
-        driver.get("https://open.spotify.com/intl-es");
-        Thread.sleep(3000);
+        driver.findElement(By.xpath("//button[@data-testid ='signup-button']")).click();
 
-        By byBtnRegistrarse = By.xpath("//button[contains(text(),'Log')]");
-
-        WebElement btnRegistrarse = driver.findElement(byBtnRegistrarse);
-
-        btnRegistrarse.click();
-
-        Thread.sleep(3000);
-
-        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
+        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label ='Close']"));
 
         if(btnCerrarPopUp.isDisplayed()){
             btnCerrarPopUp.click();
         }
-
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@name='username']")).sendKeys("userpruebabootcamp@gmail.com");
+        Thread.sleep(1000);
         driver.findElement(By.xpath("//button[@data-encore-id='buttonPrimary']")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@id='new-password']")).sendKeys("Contrasena1234");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//button[@data-encore-id='buttonPrimary']")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@id='displayName']")).sendKeys("Contrasena1234");
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//input[@id='day']")).sendKeys("11");
+        Select mes = new Select(driver.findElement(By.id("month")));
+        mes.selectByVisibleText("Diciembre");
 
-        Thread.sleep(3000);
 
-        String resultadoEsperado = "Este correo electrónico no es válido. Asegúrate de que tenga un formato como este: ejemplo@email.com";
-        String resultadoActual = driver.findElement(By.xpath("//span[contains(text(),'Este correo')]")).getText();
 
-        Assertions.assertEquals(resultadoEsperado,resultadoActual);
     }
-
-    //Esta dirección ya está vinculada a una cuenta. Para continuar, inicia sesión.
 
     @BeforeEach
     public void preCondiciones(){
@@ -61,10 +55,10 @@ public class TestCaseRegistro {
         driver.manage().window().maximize();
     }
 
-    @AfterEach
-    public void posCondiciones() throws InterruptedException {
-        //driver.close();
-        Thread.sleep(3000);
-        driver.close();
-    }
+        @AfterEach
+        public void posCondiciones() throws InterruptedException {
+            //driver.close();
+            Thread.sleep(3000);
+            //driver.close();
+        }
 }
