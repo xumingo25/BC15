@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BCI {
+public class BCI_BenjaminMontero {
 
     private WebDriver driver;
     private WebDriverWait wait;
