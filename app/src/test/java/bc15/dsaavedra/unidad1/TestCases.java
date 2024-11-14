@@ -30,6 +30,8 @@ public class TestCases {
 
 
 //<<<<<<< HEAD:app/src/test/java/bc15/dsaavedra/TestCases.java
+        
+//<<<<<<< HEAD:app/src/test/java/bc15/dsaavedra/TestCases.java
 
         Thread.sleep(1000);
 
@@ -40,7 +42,15 @@ public class TestCases {
         WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
 
 
+
         // WebElement btnCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+
+
+
+
+        WebElement btnsCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+
+
 
 
         WebElement btnCerrarPopUp2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
@@ -57,6 +67,7 @@ public class TestCases {
 //        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
 //
 //=======
+
 
             Thread.sleep(1000);
 
@@ -102,9 +113,15 @@ public class TestCases {
             String resultadoActual = driver.findElement(By.xpath("//button[@data-testid='user-widget-link']")).getAttribute("aria-label");
 
             Assertions.assertEquals(resultadoEsperado, resultadoActual);
+
+       // WebElement btnCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+
+        if(btnCerrarPopUp.isDisplayed()){
+            btnCerrarPopUp.click();
+
         }
     }
-}
+}}
   /*  @Test
     public void CP002_CreacionCta_SpotifyNOOK_MailVacio() throws InterruptedException {
         driver.get("https://open.spotify.com/intl-es");
