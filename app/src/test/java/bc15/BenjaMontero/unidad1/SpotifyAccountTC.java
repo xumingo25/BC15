@@ -1,6 +1,6 @@
-package bc15.BenjaMontero;
+package bc15.BenjaMontero.unidad1;
 
-import bc15.BenjaMontero.utils.Email;
+import bc15.BenjaMontero.unidad1.utils.Email;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
