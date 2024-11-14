@@ -1,4 +1,4 @@
-package bc15.BenjaMontero.utils;
+package bc15.BenjaMontero.unidad1.utils;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Assertions;
