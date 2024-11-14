@@ -109,12 +109,8 @@ public class BaseClass {
         }
     }
 
-<<<<<<< HEAD
-=======
     public String obtenerTextoAtributo(WebElement elemento, String texto){
         return elemento.getAttribute(texto);
     }
 
-
->>>>>>> 61f1c1df627cb487372302e00601a0826b9180e8
 }
