@@ -28,6 +28,7 @@ public class TestCases {
         btnRegistrarse.click();
         driver.findElement(By.id("username")).sendKeys("userbc5tt6f3404101@gmail.com");
 
+<<<<<<< HEAD
 //<<<<<<< HEAD:app/src/test/java/bc15/dsaavedra/TestCases.java
 <<<<<<< HEAD
         Thread.sleep(1000);
@@ -52,8 +53,11 @@ public class TestCases {
 //        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
 //
 //=======
+=======
+        Thread.sleep(1000);
+
+>>>>>>> 0a24b4f670af1b7446d6261f409f27755edd18c2
         WebElement btnCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
-//>>>>>>> bf7a9b9343eed4cf2951648a554d59392f4214ad:app/src/test/java/bc15/dsaavedra/unidad1/TestCases.java
         if(btnCerrarPopUp.isDisplayed()){
             btnCerrarPopUp.click();
 >>>>>>> f4c79aa43013d801e4a54a933707c8fd92bdc6a3

@@ -109,7 +109,9 @@ public class BaseClass {
         }
     }
 
-
+    public String obtenerTextoAtributo(WebElement elemento, String texto){
+        return elemento.getAttribute(texto);
+    }
 
 
 }
