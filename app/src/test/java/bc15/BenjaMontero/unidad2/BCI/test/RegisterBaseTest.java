@@ -1,12 +1,11 @@
 package bc15.BenjaMontero.unidad2.BCI.test;
 
-import bc15.BenjaMontero.unidad2.BCI_BenjaminMontero;
-import bc15.BenjaMontero.unidad2.BCI_BenjaminMontero.RegisterPage;
-import bc15.BenjaMontero.unidad2.BCI_BenjaminMontero;
+import bc15.BenjaMontero.unidad2.BCI.HomePage;
+import bc15.BenjaMontero.unidad2.BCI.RegisterPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class RegisterTest extends BCI_BenjaminMontero.test.Test {
+public class RegisterBaseTest extends BaseTest {
 
     HomePage homePage;
     RegisterPage registerPage;
