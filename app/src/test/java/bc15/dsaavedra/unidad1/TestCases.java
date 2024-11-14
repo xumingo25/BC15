@@ -28,7 +28,36 @@ public class TestCases {
         btnRegistrarse.click();
         driver.findElement(By.id("username")).sendKeys("userbc5tt6f3404101@gmail.com");
 
+
 //<<<<<<< HEAD:app/src/test/java/bc15/dsaavedra/TestCases.java
+        
+//<<<<<<< HEAD:app/src/test/java/bc15/dsaavedra/TestCases.java
+
+        Thread.sleep(1000);
+
+        driver.findElement(By.name("username")).sendKeys("userbc1500101@gmail.com");
+
+        Thread.sleep(1000);
+
+        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
+
+
+
+        // WebElement btnCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+
+
+
+
+        WebElement btnsCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+
+
+
+
+        WebElement btnCerrarPopUp2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+
+        if (btnCerrarPopUp2.isDisplayed()) {
+            btnCerrarPopUp2.click();
+
 //        Thread.sleep(1000);
 //
 //        driver.findElement(By.name("username")).sendKeys("userbc1500101@gmail.com");
@@ -38,49 +67,62 @@ public class TestCases {
 //        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
 //
 //=======
-        WebElement btnCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
-//>>>>>>> bf7a9b9343eed4cf2951648a554d59392f4214ad:app/src/test/java/bc15/dsaavedra/unidad1/TestCases.java
+
+
+            Thread.sleep(1000);
+
+
+            //  WebElement btnCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+
+            if (btnCerrarPopUp.isDisplayed()) {
+                btnCerrarPopUp.click();
+
+            }
+
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
+
+            driver.findElement(By.name("new-password")).sendKeys("qwerty12345@");
+
+            Thread.sleep(1000);
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
+
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.name("displayName"))).sendKeys("User BC 00001");
+
+            driver.findElement(By.xpath("//input[@placeholder='dd']")).sendKeys("31");
+
+            Select ddlMes = new Select(driver.findElement(By.id("month")));
+            ddlMes.selectByVisibleText("Diciembre");
+
+            driver.findElement(By.xpath("//input[@placeholder='aaaa']")).sendKeys("1999");
+
+            List<WebElement> generos = driver.findElements(By.xpath("//label[contains(@for,'gender')]"));
+
+            generos.get(0).click();
+
+            driver.findElement(By.xpath("//button[@data-testid='submit']")).submit();
+
+            List<WebElement> checks = driver.findElements(By.xpath("//label[contains(@for,'checkbox-')]"));
+
+            checks.get(0).click();
+
+            checks.get(1).click();
+
+            driver.findElement(By.xpath("//button[@data-testid='submit']")).submit();
+
+            String resultadoEsperado = "User BC 00001";
+            String resultadoActual = driver.findElement(By.xpath("//button[@data-testid='user-widget-link']")).getAttribute("aria-label");
+
+            Assertions.assertEquals(resultadoEsperado, resultadoActual);
+
+       // WebElement btnCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+
         if(btnCerrarPopUp.isDisplayed()){
             btnCerrarPopUp.click();
+
         }
-
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
-
-        driver.findElement(By.name("new-password")).sendKeys("qwerty12345@");
-
-        Thread.sleep(1000);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.name("displayName"))).sendKeys("User BC 00001");
-
-        driver.findElement(By.xpath("//input[@placeholder='dd']")).sendKeys("31");
-
-        Select ddlMes =new Select(driver.findElement(By.id("month")));
-        ddlMes.selectByVisibleText("Diciembre");
-
-        driver.findElement(By.xpath("//input[@placeholder='aaaa']")).sendKeys("1999");
-
-        List<WebElement> generos = driver.findElements(By.xpath("//label[contains(@for,'gender')]"));
-
-        generos.get(0).click();
-
-        driver.findElement(By.xpath("//button[@data-testid='submit']")).submit();
-
-        List<WebElement> checks = driver.findElements(By.xpath("//label[contains(@for,'checkbox-')]"));
-
-        checks.get(0).click();
-
-        checks.get(1).click();
-
-        driver.findElement(By.xpath("//button[@data-testid='submit']")).submit();
-
-        String resultadoEsperado = "User BC 00001";
-        String resultadoActual = driver.findElement(By.xpath("//button[@data-testid='user-widget-link']")).getAttribute("aria-label");
-
-        Assertions.assertEquals(resultadoEsperado,resultadoActual);
     }
-
-    @Test
+}}
+  /*  @Test
     public void CP002_CreacionCta_SpotifyNOOK_MailVacio() throws InterruptedException {
         driver.get("https://open.spotify.com/intl-es");
         Thread.sleep(3000);
@@ -136,5 +178,5 @@ public class TestCases {
         //driver.close();
     }
 
+*/
 
-}

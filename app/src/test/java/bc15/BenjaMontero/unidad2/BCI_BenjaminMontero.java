@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class BCI {
+public class BCI_BenjaminMontero {
 
     private WebDriver driver;
     private WebDriverWait wait;
@@ -38,7 +38,7 @@ public class BCI {
         //ingreso confirmacion de email
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(" //input[contains(@placeholder, 'Vuelve a ingresar tu email')]"))).sendKeys("benjatest@gmail.com");
         //click para sacar el label que aparece abajo
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(" //input[contains(@placeholder, 'Ingresa tu teléfono')]"))).click();
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(" //input[contains(@placeholder, 'Ingresa tu teléfono')]"))).click();
         //terminos y condiciones
         WebElement btnCheckbox = driver.findElement(By.id("bci-wk-checkbox0"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
