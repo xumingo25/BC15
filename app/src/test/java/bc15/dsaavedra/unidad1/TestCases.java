@@ -28,7 +28,13 @@ public class TestCases {
         btnRegistrarse.click();
         driver.findElement(By.id("username")).sendKeys("userbc5tt6f3404101@gmail.com");
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+//<<<<<<< HEAD:app/src/test/java/bc15/dsaavedra/TestCases.java
+<<<<<<< HEAD
+>>>>>>> 848706c6ff6aeb5f32823e6cc44cc7266e93c7ac
         Thread.sleep(1000);
 
         driver.findElement(By.name("username")).sendKeys("userbc1500101@gmail.com");
@@ -37,12 +43,35 @@ public class TestCases {
 
         WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
 
+<<<<<<< HEAD
 
         WebElement btnsCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
 
 
+=======
+        WebElement btnCerrarPopUp2 = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+
+        if(btnCerrarPopUp2.isDisplayed()){
+            btnCerrarPopUp2.click();
+=======
+//        Thread.sleep(1000);
+//
+//        driver.findElement(By.name("username")).sendKeys("userbc1500101@gmail.com");
+//
+//        Thread.sleep(1000);
+//
+//        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
+//
+//=======
+=======
+        Thread.sleep(1000);
+
+>>>>>>> 0a24b4f670af1b7446d6261f409f27755edd18c2
+        WebElement btnCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
+>>>>>>> 848706c6ff6aeb5f32823e6cc44cc7266e93c7ac
         if(btnCerrarPopUp.isDisplayed()){
             btnCerrarPopUp.click();
+>>>>>>> f4c79aa43013d801e4a54a933707c8fd92bdc6a3
         }
 
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
