@@ -4,6 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +15,7 @@ public class BciTestCase {
     private WebDriver driver;
 
     @Test //crear test
-    public void CP001_Abrir() throws InterruptedException { // Thread.sleep
+    public void CP001_RegistroNoPosible() throws InterruptedException { // Thread.sleep
         driver.get("https://www.bci.cl/personas");
         Thread.sleep(3000);
 
@@ -59,16 +60,20 @@ public class BciTestCase {
         Thread.sleep(2000);
 
         //label[@class="bci-wk-label__checkbox"]
-        By abt5=By.xpath("//lavel[@class=\"bci-wk-label__checkbox\"]");
-        WebElement btn7=driver.findElement(abt5);
-        btn7.click();
+      // By abt5=By.xpath("//input[@id=\"bci-wk-checkbox0\"]");
+       // WebElement btn7=driver.findElement(abt5);
+
+
+        WebElement Checkboxb = driver.findElement(By.xpath("//input[@id=\"bci-wk-checkbox0\"]"));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", Checkboxb);
         Thread.sleep(2000);
 
         //button[@class="bci-wk-btn bci-wk-btn--primary"]
         By abt6=By.xpath(" //button[@class=\"bci-wk-btn bci-wk-btn--primary\"]");
         WebElement btn8=driver.findElement(abt6);
         btn8.click();
-        Thread.sleep(2000);
+        Thread.sleep(16000);
 
 
 
