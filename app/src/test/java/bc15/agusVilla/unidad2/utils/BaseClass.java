@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -97,5 +96,9 @@ public class BaseClass {
         }catch (NoSuchElementException e){
             return false;
         }
+    }
+
+    public String obtenerTEXTOaTRIBUTO(WebElement elemento, String texto){
+        return elemento.getAttribute(texto);
     }
 }
