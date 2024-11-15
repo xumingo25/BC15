@@ -113,5 +113,4 @@ public class BaseClass {
         return elemento.getAttribute(texto);
     }
 
-
 }
