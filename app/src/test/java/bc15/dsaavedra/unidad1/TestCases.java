@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 package bc15.dsaavedra.unidad1;
 
 import bc15.dsaavedra.unidad1.utils.Encoding;
@@ -180,3 +182,4 @@ public class TestCases {
 
 */
 
+>>>>>>> 1c3ca181e27794393a13a0e823cd82f2aeab9b7e
