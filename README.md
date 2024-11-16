@@ -16,3 +16,4 @@
 - Diaz Rodrigo
 - Acevedo Gonzalo
 - Matias Mercado
+- Franco Gutierrez
