@@ -1,19 +1,19 @@
-package bc15.griquieri;
+package bc15.griquieri.Unidad1;
 
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class TestSpotifyAccaunt {
 
@@ -81,6 +81,17 @@ public class TestSpotifyAccaunt {
 
         gender.get(0).click();
         Thread.sleep(1000);
+        gender.get(1).click();
+        Thread.sleep(1000);
+        gender.get(2).click();
+        Thread.sleep(1000);
+        gender.get(3).click();
+        Thread.sleep(1000);
+        gender.get(4).click();
+        Thread.sleep(1000);
+        gender.get(0).click();
+        Thread.sleep(1000);
+
 
         EsperayClick(By.xpath("//button[@data-testid='submit']"));
 
@@ -88,6 +99,15 @@ public class TestSpotifyAccaunt {
         List<WebElement> checks = driver.findElements(By.xpath("//label[contains(@for,'checkbox-')]"));
 
         checks.get(0).click();
+        Thread.sleep(1000);
+        checks.get(1).click();
+        Thread.sleep(1000);
+        checks.get(0).click();
+        Thread.sleep(1000);
+        checks.get(1).click();
+        checks.get(0).click();
+        Thread.sleep(1000);
+        checks.get(1).click();
         Thread.sleep(1000);
 
         EsperayClick(By.xpath("//button[@data-testid='submit']"));

@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class TestCases {
-    private WebDriver driver;  //inicializar el webdriver
+   /* private WebDriver driver;  //inicializar el webdriver
     private WebDriverWait wait;
 
     @Test //crear test
@@ -136,5 +136,5 @@ public class TestCases {
         //driver.close();
     }
 
-
+*/
 }

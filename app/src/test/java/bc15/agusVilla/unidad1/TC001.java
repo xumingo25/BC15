@@ -1,4 +1,4 @@
-package bc15.agusVilla;
+package bc15.agusVilla.unidad1;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -66,7 +66,7 @@ public class TC001 {
         Select selector = new Select(comboMes);
         selector.selectByVisibleText("Enero");
 
-        List<WebElement> list = driver.findElement(By.xpath());
+        //List<WebElement> list = driver.findElement(By.xpath());
     }
 
 
