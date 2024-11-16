@@ -81,17 +81,6 @@ public class TestSpotifyAccaunt {
 
         gender.get(0).click();
         Thread.sleep(1000);
-        gender.get(1).click();
-        Thread.sleep(1000);
-        gender.get(2).click();
-        Thread.sleep(1000);
-        gender.get(3).click();
-        Thread.sleep(1000);
-        gender.get(4).click();
-        Thread.sleep(1000);
-        gender.get(0).click();
-        Thread.sleep(1000);
-
 
         EsperayClick(By.xpath("//button[@data-testid='submit']"));
 
@@ -99,15 +88,6 @@ public class TestSpotifyAccaunt {
         List<WebElement> checks = driver.findElements(By.xpath("//label[contains(@for,'checkbox-')]"));
 
         checks.get(0).click();
-        Thread.sleep(1000);
-        checks.get(1).click();
-        Thread.sleep(1000);
-        checks.get(0).click();
-        Thread.sleep(1000);
-        checks.get(1).click();
-        checks.get(0).click();
-        Thread.sleep(1000);
-        checks.get(1).click();
         Thread.sleep(1000);
 
         EsperayClick(By.xpath("//button[@data-testid='submit']"));
