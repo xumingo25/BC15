@@ -1,6 +1,5 @@
-package bc15.Mmercado;
+package bc15.Mmercado.Unidad1;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
