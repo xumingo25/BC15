@@ -45,8 +45,8 @@ public class TestCaseBCI {
         js.executeScript("arguments[0].click();", btnCheckbox);
         Thread.sleep(1000);// Adjust timeout as needed
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Continuar')]"))).submit();
-        String textFail = driver.findElement(By.xpath("//p[contains(text(),'Acceso bloqueado temporalmente')]")).getText();
-        Assertions.assertEquals("Acceso bloqueado temporalmente",textFail);
+        String textFail = driver.findElement(By.xpath("//p[contains(text(),'Hubo un error intentando enviar tus datos')]")).getText();
+        Assertions.assertEquals("Hubo un error intentando enviar tus datos",textFail);
     }
 
     @BeforeEach
