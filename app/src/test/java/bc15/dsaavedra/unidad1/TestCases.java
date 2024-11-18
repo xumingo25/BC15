@@ -28,18 +28,16 @@ public class TestCases {
         btnRegistrarse.click();
         driver.findElement(By.id("username")).sendKeys("userbc5tt6f3404101@gmail.com");
 
-<<<<<<< HEAD:app/src/test/java/bc15/dsaavedra/TestCases.java
         Thread.sleep(1000);
 
         driver.findElement(By.name("username")).sendKeys("userbc1500101@gmail.com");
 
         Thread.sleep(1000);
 
-        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
+//        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
 
-=======
         WebElement btnCerrarPopUp = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='Cerrar']")));
->>>>>>> bf7a9b9343eed4cf2951648a554d59392f4214ad:app/src/test/java/bc15/dsaavedra/unidad1/TestCases.java
+
         if(btnCerrarPopUp.isDisplayed()){
             btnCerrarPopUp.click();
         }
@@ -55,7 +53,7 @@ public class TestCases {
 
         driver.findElement(By.xpath("//input[@placeholder='dd']")).sendKeys("31");
 
-        Select ddlMes =new Select(driver.findElement(By.id("month")));
+        Select ddlMes = new Select(driver.findElement(By.id("month")));
         ddlMes.selectByVisibleText("Diciembre");
 
         driver.findElement(By.xpath("//input[@placeholder='aaaa']")).sendKeys("1999");

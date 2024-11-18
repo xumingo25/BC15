@@ -1,4 +1,4 @@
-package bc15.agusVilla.unidad2.utils;
+package bc15.agusVilla.unidad2.BCI.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,8 +16,9 @@ public class BaseClass {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-    public BaseClass(WebDriver driver) {
+    public BaseClass(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
+        this.wait = wait;
     }
 
     public WebDriver getDriver() {
@@ -53,9 +54,14 @@ public class BaseClass {
         }
     }
 
-    public WebElement esperaExplicita(By localizador, int segundos){
+    public WebElement esperaExplicitaVisible(By localizador, int segundos) {
         wait = new WebDriverWait(this.driver, segundos);
-        return wait.until(ExpectedConditions.presenceOfElementLocated(localizador));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(localizador));
+    }
+
+    public WebElement esperaExplicitaClickable(By localizador, int segundos) {
+        wait = new WebDriverWait(this.driver, segundos);
+        return wait.until(ExpectedConditions.elementToBeClickable(localizador));
     }
 
     public void agregarTexto(By localizador, String texto){
