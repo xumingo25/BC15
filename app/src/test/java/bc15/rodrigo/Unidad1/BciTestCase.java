@@ -1,4 +1,4 @@
-package bc15.rodrigo.Unidad2;
+package bc15.rodrigo.Unidad1;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,41 +39,30 @@ public class BciTestCase {
         btn3.sendKeys( "523.225.038");
         Thread.sleep(2000);
 
-        //input[@placeholder="Ingresa tu teléfono"]
         By abt2=By.xpath("//input[@placeholder=\"Ingresa tu teléfono\"]");
         WebElement btn4=driver.findElement(abt2);
-        String input = "112348";
-        int number = Integer.parseInt(input);
         btn4.sendKeys("3804 9737");
         Thread.sleep(2000);
 
-        //input[@placeholder="Ingresa tu email"]
         By abt3=By.xpath(" //input[@placeholder=\"Ingresa tu email\"]");
         WebElement btn5=driver.findElement(abt3);
         btn5.sendKeys("juanto@mail.com");
         Thread.sleep(2000);
 
-        //input[@placeholder="Vuelve a ingresar tu email"]
         By abt4=By.xpath("//input[@placeholder=\"Vuelve a ingresar tu email\"]");
         WebElement btn6=driver.findElement(abt4);
         btn6.sendKeys("juanto@mail.com");
         Thread.sleep(2000);
-
-        //label[@class="bci-wk-label__checkbox"]
-      // By abt5=By.xpath("//input[@id=\"bci-wk-checkbox0\"]");
-       // WebElement btn7=driver.findElement(abt5);
-
 
         WebElement Checkboxb = driver.findElement(By.xpath("//input[@id=\"bci-wk-checkbox0\"]"));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", Checkboxb);
         Thread.sleep(2000);
 
-        //button[@class="bci-wk-btn bci-wk-btn--primary"]
         By abt6=By.xpath(" //button[@class=\"bci-wk-btn bci-wk-btn--primary\"]");
         WebElement btn8=driver.findElement(abt6);
         btn8.click();
-        Thread.sleep(16000);
+        Thread.sleep(8000);
 
 
 
