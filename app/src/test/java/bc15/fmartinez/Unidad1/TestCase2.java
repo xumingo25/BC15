@@ -1,6 +1,5 @@
 package bc15.fmartinez.Unidad1;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -14,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 
-public class TC2 {
+public class TestCase2 {
     private WebDriver driver;  //inicializar el webdriver
     private WebDriverWait wait;
 
@@ -68,8 +67,4 @@ public class TC2 {
 
     }
 
-    @AfterEach
-    public void posCondiciones(){
-        //driver.close();
-    }
 }
