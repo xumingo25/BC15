@@ -1,10 +1,13 @@
 package bc15.dsaavedra.unidad2.utils;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -89,14 +92,26 @@ public class BaseClass {
         this.driver.switchTo().frame(elemento);
     }
 
-    public WebDriver conexionDriver(String browser, String ruta,String property){
+    public WebDriver conexionDriver(String browser){
         if(browser.equalsIgnoreCase("Chrome")){
-            System.setProperty(property,ruta);
+            WebDriverManager.chromedriver().setup();
             this.driver = new ChromeDriver();
         }
         if(browser.equalsIgnoreCase("Firefox")){
-            System.setProperty(property,ruta);
+            WebDriverManager.firefoxdriver().setup();
             this.driver = new FirefoxDriver();
+
+        }
+        if(browser.equalsIgnoreCase("edge")){
+            WebDriverManager.edgedriver().setup();
+            this.driver = new EdgeDriver();
+
+        }
+
+        if(browser.equalsIgnoreCase("explorer")){
+            WebDriverManager.iedriver().setup();
+            this.driver = new InternetExplorerDriver();
+
         }
         return this.driver;
     }
