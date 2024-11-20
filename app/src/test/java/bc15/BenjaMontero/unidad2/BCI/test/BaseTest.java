@@ -19,6 +19,8 @@ public class BaseTest {
         try{
             WebDriver driver = BaseClass.generateDriver(browser, urlDriver, property);
             BaseClass.setMaximWindow(driver);
+            BaseClass.setEspera(driver);
+            this.driver = driver;
         }catch (Exception e){
             Assertions.fail("Can not create driver session");
         }
