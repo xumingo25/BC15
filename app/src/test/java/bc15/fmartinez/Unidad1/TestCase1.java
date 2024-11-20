@@ -65,7 +65,7 @@ public class TestCase1 {
     checks.get(1).click();
     Thread.sleep(1000);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
+    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
     }
 
     @BeforeEach
