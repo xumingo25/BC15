@@ -1,4 +1,4 @@
-package bc15.aramos;
+package bc15.aramos.Unidad2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ public class TestRegistroBCI {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//bci-wk-input-text//input[@placeholder='Ingresa tu RUT']"))).sendKeys("5766985-3");
         //documento no valido
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//bci-wk-input-text//input[@placeholder='Ingresa número']"))).sendKeys("30948573");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//bci-wk-input-text//input[@placeholder='Ingresa número']"))).sendKeys("300.000.000");
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@placeholder, 'Ingresa tu teléfono')]"))).sendKeys("354685831");
 
@@ -41,7 +41,7 @@ public class TestRegistroBCI {
         // Hacer clic sobre el checkbox usando JavaScript
         js.executeScript("arguments[0].click();", botonCheck);
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='bci-wk-btn bci-wk-btn--primary' and @disabled]"))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Continuar']"))).click();
 
 
     }

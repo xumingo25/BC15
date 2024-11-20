@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 package bc15.dsaavedra.unidad1;
 
 import bc15.dsaavedra.unidad1.utils.Encoding;
@@ -31,9 +30,7 @@ public class TestCases {
         driver.findElement(By.id("username")).sendKeys("userbc5tt6f3404101@gmail.com");
 
 
-//<<<<<<< HEAD:app/src/test/java/bc15/dsaavedra/TestCases.java
-        
-//<<<<<<< HEAD:app/src/test/java/bc15/dsaavedra/TestCases.java
+
 
         Thread.sleep(1000);
 
@@ -182,4 +179,4 @@ public class TestCases {
 
 */
 
->>>>>>> 1c3ca181e27794393a13a0e823cd82f2aeab9b7e
+
