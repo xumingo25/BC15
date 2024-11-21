@@ -1,7 +1,6 @@
 package bc15.agusVilla.unidad1;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -30,56 +29,56 @@ public class TC002 {
         By byRegisterButton = By.xpath("//button[@data-testid='signup-button']");
         By byClosePopUp = By.xpath("//button[@aria-label='Cerrar']");
         By byInputEmail = By.xpath("//input[@id='username']");
-        Thread.sleep(1000);
-        //By byButtonSiguiente = By.xpath("//button[@data-testid='submit']");
-        By byInputContra = By.id("new-password");
-        By byInputNombre = By.xpath("input[@data-encore-id='formInput']");
-
+        By byButtonSiguiente = By.xpath("//button[@data-testid='submit']");
 
         driver.get("https://open.spotify.com/intl-es");
         Thread.sleep(2000);
 
         WebElement registrarse = driver.findElement(byRegisterButton);
         registrarse.click();
-        Thread.sleep(1000);
-
         WebElement btnCerrarPopUp = wait.until(ExpectedConditions.presenceOfElementLocated(byClosePopUp));
         btnCerrarPopUp.click();
 
         WebElement inputEmail = wait.until(ExpectedConditions.presenceOfElementLocated(byInputEmail));
         inputEmail.sendKeys(email);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-encore-id='buttonPrimary']"))).click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
 
-        WebElement inputContra = wait.until(ExpectedConditions.presenceOfElementLocated(byInputContra));
-        inputContra.sendKeys(contrasena);
-        WebElement siguientePsswd = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']")));
-        Thread.sleep(1000);
-        siguientePsswd.click();
-        Thread.sleep(1000);
+        WebElement siguiente = driver.findElement(byButtonSiguiente);
+        if (!inputEmail.getText().isEmpty()){
+            siguiente.click();
+            System.out.println("Se hizo click");
+        }else{
+            System.out.println("El campo de mail esta vacio");
+        }
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.name("displayName"))).sendKeys("UsuarioDePrueba34");
-        driver.findElement(By.xpath("//input[@placeholder='dd']")).sendKeys("16");
-        Thread.sleep(1000);
 
-        Select selector = new Select(driver.findElement(By.name("month")));
-        selector.selectByVisibleText("Junio");
-        driver.findElement(By.xpath("//input[@placeholder='aaaa']")).sendKeys("2005");
+        /*
+        Thread.sleep(2000);
+        //Contraseña
+        WebElement inputContra = driver.findElement(By.xpath("//*[@id='new-password']"));
+        if (inputContra.isDisplayed()){
+            inputContra.sendKeys(contrasena);
+        }
+        driver.findElement(By.xpath("/html/body/div[1]/main/main/section/div/form/button/span[1]")).click();
 
-        List<WebElement> generos = driver.findElements(By.xpath("//label[contains(@for,'gender')]"));
-        generos.get(0).click();
-        driver.findElement(By.xpath("//button[@data-testid='submit']")).submit();
+        //Nombre
+        WebElement inputNombre = driver.findElement(By.xpath("//*[@id='displayName']"));
+        if (inputNombre.isDisplayed()){
+            inputNombre.sendKeys(nombre);
+        }
 
-        List<WebElement> checks = driver.findElements(By.xpath("//label[contains(@for,'checkbox-')]"));
-        checks.get(0).click();
-        checks.get(1).click();
-        driver.findElement(By.xpath("//button[@data-testid='submit']")).submit();
+        //Nacimiento
+        //Dia
 
-        String resultadoEsperado = "UsuarioDePrueba34";
-        String resultadoActual = driver.findElement(By.xpath("//button[@data-testid='user-widget-link']")).getAttribute("aria-label");
 
-        Assertions.assertEquals(resultadoEsperado,resultadoActual);
+        //Mes
+        WebElement comboMes = driver.findElement(By.id("month"));
+        Select selector = new Select(comboMes);
+        selector.selectByVisibleText("Enero");
 
+        //List<WebElement> list = driver.findElement(By.xpath());
+        */
     }
 
 

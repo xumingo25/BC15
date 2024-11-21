@@ -99,7 +99,7 @@ public class TCBCI {
         //Mensaje si falla
         failText(By.xpath("//p[contains(text(), 'Hubo un error intentando enviar tus datos')]"),"Hubo un error intetentado enviar datos");
 
-        //Ya esta completo el tp
+
     }
 
     @AfterEach
