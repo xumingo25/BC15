@@ -1,4 +1,4 @@
-package bc15.rodrigo.Unidad1;
+package bc15.rodrigoDiaz.Unidad1;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

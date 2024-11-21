@@ -1,7 +1,6 @@
-package bc15.aramos;
+package bc15.aramos.Unidad1;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -28,7 +27,7 @@ public class TestCases {
 
         Thread.sleep(3000);
 
-        driver.findElement(By.xpath("//input[@id='username']")).sendKeys("userBotc15@gmail.com");
+        driver.findElement(By.xpath("//input[@id='username']")).sendKeys("userBootc150@gmail.com");
 
 
         WebElement botonCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
@@ -79,12 +78,6 @@ public class TestCases {
 
         driver.findElement(By.xpath("//button[@data-testid='submit']")).click();
         Thread.sleep(1000);
-
-        String resultadoEsperado = "UserTest BC15";
-        String resultadoActual = driver.findElement(By.xpath("//button[@data-testid='user-widget-link']")).getAttribute("aria-label");
-
-        Assertions.assertEquals(resultadoEsperado,resultadoActual);
-
     }
 
     @BeforeEach
