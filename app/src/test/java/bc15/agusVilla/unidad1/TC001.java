@@ -1,4 +1,4 @@
-package bc15.agusVilla.unidad1;
+package bc15.agusVilla;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
