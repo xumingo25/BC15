@@ -7,126 +7,85 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class TestCases {
- private WebDriver driver;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
     @Test
-    public void CP001_CreacionCta_Spotify() throws InterruptedException {
-        // Abre la página principal de Spotify
+    public void CP0001_CreacionCta_Spotify() throws InterruptedException {
+
         driver.get("https://open.spotify.com/intl-es");
-        Thread.sleep(3000);
 
-        // Busca y hace clic en el botón de "Registrarse"
-        By byBtnRegistrarse = By.xpath("//button[contains(text(),'Reg')]");
+        By byClosePopup = By.xpath("//button[@aria-label='Cerrar']");
+        if (!driver.findElements(byClosePopup).isEmpty()) {
+            WebElement btnClosePopup = wait.until(ExpectedConditions.elementToBeClickable(byClosePopup));
+            btnClosePopup.click();
+        }
 
+        By byBtnRegistrarse = By.xpath("//button[@data-testid='signup-button']");
         WebElement btnRegistrarse = driver.findElement(byBtnRegistrarse);
-
         btnRegistrarse.click();
 
-        Thread.sleep(3000);
+        driver.findElement(By.xpath("//input[@id='username']")).sendKeys("dubidubadubaaaaaa@gmail.com");
 
-        //Cerrar Pop-up "la ventana emergente"
-        WebElement btnCerrarPopUp = driver.findElement(By.xpath("//button[@aria-label='Cerrar']"));
+        WebElement btnSubmit = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']")));
+        Thread.sleep(2000);
+        btnSubmit.click();
 
-        if(btnCerrarPopUp.isDisplayed()){
-            btnCerrarPopUp.click();
-        }
+        driver.findElement(By.id("new-password")).sendKeys("Abc123def567!");
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
 
-        Thread.sleep(1000);
+        driver.findElement(By.id("displayName")).sendKeys("usuario325D");
 
-        //entrar en la casilla de email
-        WebElement email = driver.findElement(By.id("username"));
-        email.sendKeys("unacuentaquenofueusadanunca@gmail.com");
-        Thread.sleep(1000);
-
-        // Darle click a Reegistrar
-        driver.findElement(By.xpath("//button[@data-encore-id='buttonPrimary']")).click();
-        Thread.sleep(1000);
-
-
-        //Complete password
-        driver.findElement(By.xpath
-                ("//input[@id='new-password']")).sendKeys("Contraseña325.");
-        Thread.sleep(1000);
-
-        driver.findElement(By.xpath("//button[@data-testid='submit']")).click();
-
-        // Encuentra e Ingresar un Nombre de usuario
-        driver.findElement(By.xpath
-                ("//input[@id='displayName']")).sendKeys("usuario325xD");
-
-        // Encuentra e Ingresa el Numero del Dia de Nacimiento o REF de la cuenta
         driver.findElement(By.xpath("//input[@placeholder='dd']")).sendKeys("26");
+
+        Select ddlMes =new Select(driver.findElement(By.id("month")));
+        ddlMes.selectByVisibleText("Diciembre");
+
+        driver.findElement(By.xpath("//input[@placeholder='aaaa']")).sendKeys("1995");
+
+        List<WebElement> gender = driver.findElements(By.xpath("//label[contains(@for,'gender')]"));
+
+        gender.get(0).click();
         Thread.sleep(1000);
 
-        //Seleeciono la ventana desplegable y hago clic en el mes de Enero
-        Select ddlMes = new Select(driver.findElement(By.id("month")));
-        ddlMes.selectByVisibleText("Enero");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
+
+        List<WebElement> checks = driver.findElements(By.xpath("//label[contains(@for,'checkbox-')]"));
+
+        checks.get(0).click();
+        Thread.sleep(1000);
+        checks.get(1).click();
         Thread.sleep(1000);
 
-        //Encuentra e Ingresa el año de Nacimiento en la casilla
-        driver.findElement(By.xpath("//input[@id='year']")).sendKeys("1995");
-        Thread.sleep(1000);
-
-        // Busca dentro de un Label con un for el genero
-        List<WebElement> generos = driver.findElements(By.xpath("//label[contains(@for,'gender')]"));
-
-        //Aqui recorre todos los botones para seleccionar el tipo de genero adecuado
-        generos.get(0).click();
-        Thread.sleep(1000);
-        generos.get(1).click();
-        Thread.sleep(1000);
-        generos.get(2).click();
-        Thread.sleep(1000);
-        generos.get(3).click();
-        Thread.sleep(1000);
-        generos.get(4).click();
-        Thread.sleep(1000);
-        generos.get(0).click();
-        Thread.sleep(1000);
-
-        // Aqui Selecciona el genero que definimos
-        driver.findElement(By.xpath("//button[@data-testid='submit']")).click();
-        Thread.sleep(1000);
-
-        //Encuentra y Selecciona los terminos y condiciones de la pagina
-        List<WebElement> checklist = driver.findElements(By.xpath("//label[contains(@for,'checkbox-')]"));
-        checklist.get(0).click(); // La posicion cera 0 ya que es el primer casillero
-        //Thread.sleep(1000);
-        checklist.get(1).click(); // La posicion cera 1 ya que es el segundo casillero
-        Thread.sleep(1000);
-
-
-        // Hace clic en boton registrar
-        driver.findElement(By.xpath("//button[@data-testid='submit']")).click();
-        Thread.sleep(1000);
-
-
-        // Verificar que se ha redirigido a la página de bienvenida o que se muestra un mensaje de éxito
-       // String expectedUrl = "https://open.spotify.com/"; // URL de destino después del registro
-        //String actualUrl = driver.getCurrentUrl();
-        //Assertions.assertEquals(expectedUrl, actualUrl, "La cuenta debería haberse creado exitosamente.");
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-testid='submit']"))).submit();
     }
-        //tiene menú contextual
 
-        /*@AfterEach
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }*/
     @BeforeEach
     public void preCondiciones(){
         String rutaDriver = System.getProperty("user.dir") +"\\src\\test\\resources\\drivers\\chromedriver.exe";
         //enlazar el webdriver a traves de property
-            System.setProperty("webdriver.chrome.driver",rutaDriver);
-        // testing
+        System.setProperty("webdriver.chrome.driver",rutaDriver);
+        //testing
         driver = new ChromeDriver();
-        // maximizar el browser
-        driver.manage().window().maximize();}
+
+        //maximizar el browser
+        driver.manage().window().maximize();
+
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(45, TimeUnit.SECONDS);
+
+        wait = new WebDriverWait(driver,20);
 
     }
+
+}
